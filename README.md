@@ -11,8 +11,9 @@ From the project root:
 Since Anaconda prompt and built using Jupyter Notebook is used the following are the steps to proceed:
 1:
 ```bash
- cd C:\Users\USERNAME\Downloads\concrete_strength ("Downloads" because the file is saved in it)
+ cd C:\Users\USERNAME\Downloads\concrete_strength 
 ```
+Note: ("Downloads" because the file is saved in it)
 2:
 ```bash
 python app.py
