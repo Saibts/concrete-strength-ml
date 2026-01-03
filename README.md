@@ -14,6 +14,7 @@ Since Anaconda prompt and built using Jupyter Notebook is used the following are
  cd C:\Users\USERNAME\Downloads\concrete_strength 
 ```
 Note: ("Downloads" because the file is saved in it)
+
 2:
 ```bash
 python app.py
