@@ -1,0 +1,94 @@
+<head>
+  <meta charset="utf-8">
+  <title>Concrete Strength Predictor</title>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background: #f2f4f7;
+    }
+    .app-card {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+    }
+    .app-title {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+    .result-badge {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="app-card">
+      <h1 class="app-title mb-4">Concrete Strength Predictor</h1>
+
+      <form action="/predict_form" method="post" class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Cement (kg/m³)</label>
+          <input type="number" step="0.01" name="cement" class="form-control" required>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Slag (kg/m³)</label>
+          <input type="number" step="0.01" name="slag" class="form-control" required>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Fly ash (kg/m³)</label>
+          <input type="number" step="0.01" name="ash" class="form-control" required>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Water (kg/m³)</label>
+          <input type="number" step="0.01" name="water" class="form-control" required>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Superplasticizer (kg/m³)</label>
+          <input type="number" step="0.01" name="superplastic" class="form-control" required>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Coarse aggregate (kg/m³)</label>
+          <input type="number" step="0.01" name="coarseagg" class="form-control" required>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Fine aggregate (kg/m³)</label>
+          <input type="number" step="0.01" name="fineagg" class="form-control" required>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Age (days)</label>
+          <input type="number" step="1" name="age" class="form-control" required>
+        </div>
+
+        <div class="col-12 mt-3">
+          <button type="submit" class="btn btn-primary px-4">Predict</button>
+        </div>
+      </form>
+
+      {% if prediction is defined %}
+        <hr class="my-4">
+        <div class="d-flex align-items-center mb-3">
+          <span class="badge bg-success result-badge me-3">
+            {{ prediction }} MPa
+          </span>
+          <span>{{ strength_label }}</span>
+        </div>
+        <ul class="list-group">
+          {% for u in strength_uses %}
+            <li class="list-group-item">{{ u }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+</body>
