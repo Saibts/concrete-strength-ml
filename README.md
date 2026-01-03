@@ -9,7 +9,8 @@ This project includes a small Flask web application that wraps the trained Rando
 Make sure Python and the required libraries (Flask, scikit-learn, joblib, etc.) are installed, then from the project root run:
 From the project root:
 Since Anaconda prompt and built using Jupyter Notebook is used the following are the steps to proceed:
-1:
+
+1: Open terminal Anaconda and paste the below commands
 ```bash
  cd C:\Users\USERNAME\Downloads\concrete_strength 
 ```
