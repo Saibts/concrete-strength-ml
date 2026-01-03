@@ -8,8 +8,18 @@ This project includes a small Flask web application that wraps the trained Rando
 ### Run locally
 Make sure Python and the required libraries (Flask, scikit-learn, joblib, etc.) are installed, then from the project root run:
 From the project root:
+Since Anaconda prompt and built using Jupyter Notebook is used the following are the steps to proceed:
+1:
+```bash
+ cd C:\Users\USERNAME\Downloads\concrete_strength ("Downloads" because the file is saved in it)
+```
+2:
 ```bash
 python app.py
 ```
-Once the server is running, open this URL in your browser to use the web UI:
-Concrete Strength Predictor - http://127.0.0.1:5000
+3: Once the server is running it will show the URL directing to the page it shows 
+Running on  
+```bash
+http://127.0.0.1:5000
+```
+4: Click the URL and the "Concrete Strength Predictor" page will be opened in the browser
